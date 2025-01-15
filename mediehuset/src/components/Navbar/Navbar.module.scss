@@ -14,7 +14,7 @@
 
   .date {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 200;
     color: $words;
     font-family: $brushScript;
   }
@@ -28,7 +28,7 @@
       a {
         text-decoration: none;
         color: $words;
-        font-weight: bold;
+        font-weight: 200;
         font-family: $trebuchet;
         letter-spacing: 0;
         transition: letter-spacing 0.3s ease-in-out, color 0.3s ease-in-out;

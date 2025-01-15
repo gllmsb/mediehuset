@@ -19,7 +19,7 @@ export const Navbar = () => {
 
       <ul className={styles.links}>
         <li><Link to="/">Forside</Link></li>
-        <li><Link to="/events">Program</Link></li>
+        <li><Link to="/events">Events</Link></li>
         <li><Link to="/camps">Camps</Link></li>
         <li><Link to="/tickets">Billeter</Link></li>
         <li><Link to="/practical-info">Praktisk Info</Link></li>

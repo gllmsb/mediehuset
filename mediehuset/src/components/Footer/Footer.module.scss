@@ -1,0 +1,86 @@
+@use '../../styles/variables' as *; 
+
+.footer {
+    background-color: $words;
+    color: $light;
+    padding: 40px;
+    text-align: center;
+  
+    .newsletter {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-bottom: 20px;
+  
+      h3 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-family: $trebuchet;
+      }
+  
+      p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        font-family: $trebuchet;
+      }
+  
+      .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $trebuchet;
+  
+        .inputWrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+          background-color: #fff;
+          border-radius: 4px 0 0 4px;
+          overflow: hidden;
+  
+          .icon {
+            position: absolute;
+            left: 15px;
+            font-size: 21px;
+            color: $words;
+            background-color: $light;
+          }
+  
+          input {
+            padding: 12px 12px 12px 50px; 
+            font-size: 16px;
+            border: none;
+            width: 300px;
+          }
+        }
+  
+        button {
+          padding: 12px 20px;
+          font-size: 16px;
+          border: none;
+          background-color: $tilmeld;
+          color: $light;
+          border-radius: 0 4px 4px 0;
+          font-family: $trebuchet;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: $tilmeld;
+          }
+        }
+      }
+  
+      .error {
+        color: $red;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+  
+      .logo {
+        margin-top: 20px;
+        width: 150px;
+      }
+    }
+  }
+  

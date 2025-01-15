@@ -1,0 +1,14 @@
+@use '../../styles/variables' as *;
+
+.title {
+    text-align: center;
+    margin: 20px 0;
+  
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      color: $words;
+      font-family: $trebuchet;
+    }
+  }
+  

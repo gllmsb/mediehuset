@@ -1,17 +1,19 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Navbar } from '../components/Navbar/Navbar';
+import { Footer } from '../components/Footer/Footer';
 
 export const MainLayout = () => {
   return (
     <div className="main-layout">
       <header>
-        <Navbar/>
+        <Navbar />
       </header>
       <main>
+        <Outlet /> 
       </main>
       <footer>
-        <p>© 2025 Mediesuset. All rights reserved.</p>
+        <Footer />
       </footer>
     </div>
   );
