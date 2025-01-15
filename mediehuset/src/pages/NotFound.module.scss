@@ -1,0 +1,26 @@
+@use '../styles/variables' as *;
+.not-found {
+    text-align: center;
+    padding: 50px;
+  
+    h1 {
+      font-size: 48px;
+      color: $gray;
+    }
+  
+    p {
+      font-size: 20px;
+      color: $words;
+    }
+  
+    a {
+      font-size: 18px;
+      color: $tilmeld;
+      text-decoration: none;
+  
+      &:hover {
+        color: $tilmeld;
+      }
+    }
+  }
+  

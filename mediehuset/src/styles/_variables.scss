@@ -1,12 +1,17 @@
-@import url("https://use.typekit.net/zif1yju.css");
-@import 'fonts';
+@use '../styles/_fonts.scss' as *;
 
+
+@import url("https://use.typekit.net/zif1yju.css");
+
+// Font variables
 $brushScript: "brush-script-std", sans-serif;
 $trebuchet: "Trebuchet MS", sans-serif;
 
-//*COLOURS
+// Colors
 $gray: #333333;
 $light: #EFEFEF;
 $words: #000000;
 $tilmeld: #4A6FBF;
-
+$red: #E9485B;
+$green: #54A047;
+$purple: #A12E8F;
