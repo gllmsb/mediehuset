@@ -1,0 +1,74 @@
+@use "../../styles/variables" as *;
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-family: $trebuchet;
+}
+
+p {
+  font-size: 16px;
+  color: $paragraph;
+  margin-bottom: 20px;
+  font-family: $trebuchet;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none !important; 
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $red;
+    background: transparent !important; 
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.confirmButton {
+  background: $tilmeld;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: $trebuchet;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: $dark-blue;
+  }
+}

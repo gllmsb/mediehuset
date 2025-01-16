@@ -12,8 +12,7 @@ export const Tickets = () => {
     <>
       <Header backgroundImage={homeImage} />
       <Title title="BILLETER" />
-      
-      {/* Show TicketList if no ticket is selected, otherwise show TicketDetails */}
+    
       {!selectedTicket ? (
         <TicketList onSelectTicket={setSelectedTicket} />
       ) : (

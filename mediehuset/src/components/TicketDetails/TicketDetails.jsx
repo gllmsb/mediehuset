@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './TicketDetails.module.scss';
 import { MdArrowBackIos } from "react-icons/md";
+import { TicketForm } from '../TicketForm/TicketForm';
 
 export const TicketDetails = ({ ticket, onBack }) => {
   if (!ticket) return null; 
@@ -46,6 +47,7 @@ export const TicketDetails = ({ ticket, onBack }) => {
             <strong className={styles.pris}>Pris i alt:</strong> <span>DKK {totalPrice}</span>
           </div>
         </div>
+        <TicketForm />
       </div>
     </div>
   );

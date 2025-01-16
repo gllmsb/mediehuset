@@ -1,0 +1,72 @@
+@use "../../styles/variables" as *;
+
+.campCard {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+  max-width: 400px;
+  padding-bottom: 15px;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.campImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.campContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h3 {
+    font-size: 22px;
+    color: $words;
+    font-family: $trebuchet;
+  }
+
+  .description {
+    font-size: 14px;
+    color: $paragraph;
+    line-height: 1.4;
+    font-family: $trebuchet;
+  }
+
+  .capacity {
+    font-weight: bold;
+    color: $gray;
+    font-family: $trebuchet;
+  }
+
+  .ticketInfo {
+    background-color: $light;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: $trebuchet;
+
+    .access {
+      font-weight: bold;
+      color: $tilmeld;
+    }
+
+    .ticket {
+      font-size: 14px;
+      color: $words;
+      margin-top: 5px;
+
+      .ticketType {
+        font-weight: bold;
+      }
+    }
+  }
+}
