@@ -7,6 +7,7 @@
   padding: 20px;
   background-color: $light;
 
+
   .logo img {
     height: 40px;
   }
@@ -15,6 +16,14 @@
     font-size: 18px;
     font-weight: bold;
     font-family: $brushScript;
+
+    p{
+      font-family: $brushScript;
+      font-weight: 200;
+      font-size: 20px;
+      margin-top: 15px;
+      color: $words;
+    }
   }
 
   .links {
