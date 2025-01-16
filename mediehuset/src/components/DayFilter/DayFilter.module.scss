@@ -1,0 +1,33 @@
+@use '../../styles/variables' as *;
+
+.dayFilter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px; 
+    margin: 0 auto; 
+    background-color: $gray;
+  }
+  
+  button {
+    flex-grow: 1;
+    padding: 15px 30px;
+    border: none;
+    background-color: transparent;
+    color: $light;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  
+    &:hover {
+      background-color: $words;
+    }
+  
+    &.active {
+      background-color: $yellow; 
+      color: $words;
+    }
+  }
+  

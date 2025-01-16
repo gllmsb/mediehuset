@@ -1,0 +1,59 @@
+@use '../../styles/variables' as *;
+
+.programList {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.stageGroup {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+.stageTitle {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: $trebuchet;
+}
+
+.rødscene { background-color: $red; }
+.blåscene { background-color: $tilmeld; }
+.grønscene { background-color: $green; }
+.lillascene { background-color: $purple; }
+
+.eventTable {
+  background-color: $light;
+}
+
+.eventRow {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.eventTime {
+  font-weight: bold;
+  padding-left: 10px;
+  font-family: $trebuchet;
+}
+
+.eventArtist {
+  padding-left: 30px;
+  font-weight: bold;
+  font-family: $trebuchet;
+  color: $words;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $trebuchet;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: $red;
+}
