@@ -2,6 +2,8 @@
 
 .newsList {
     display: grid;
+    width: 1000px;
+    margin: 0 auto;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;

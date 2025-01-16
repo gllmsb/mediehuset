@@ -8,7 +8,7 @@ export const EventModal = ({ event, onClose }) => {
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-        {/* close button using react icons */}
+        {/* close buttn using react icons */}
         <button className={styles.closeButton} onClick={onClose}>
           <FaTimes />
         </button>
@@ -22,7 +22,7 @@ export const EventModal = ({ event, onClose }) => {
           <img src={event.image} alt={event.title} className={styles.eventImage} />
           <div className={styles.eventInfo}>
             <h2>{event.title}</h2>
-            <p>{event.description}</p>
+            <p>{event.description.length > 100 ? `${event.description.substring(0, 100)}...` : event.description}</p>
 
             {/* social media icons */}
             <div className={styles.socials}>
