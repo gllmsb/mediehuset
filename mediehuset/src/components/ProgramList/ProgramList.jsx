@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useGet } from "../../hooks/UseGet";
+import { EventModal } from "../EventModal/EventModal";
 import styles from "./ProgramList.module.scss";
 
 export const ProgramList = ({ selectedDay }) => {
   const { data: events } = useGet("https://api.mediehuset.net/mediesuset/events");
   const [groupedEvents, setGroupedEvents] = useState({});
+  const [selectedEvent, setSelectedEvent] = useState(null); // state for modal
 
   useEffect(() => {
     if (events?.items) {
-      // Filter events by selected day
+      // filter selected by day
       const filtered = events.items.filter(event => {
         const eventDate = new Date(event.datetime).toLocaleDateString("da-DK", {
           weekday: "long",
@@ -16,7 +18,7 @@ export const ProgramList = ({ selectedDay }) => {
         return eventDate.toLowerCase() === selectedDay.toLowerCase();
       });
 
-      // Group events by stage
+      // group by stage
       const grouped = filtered.reduce((acc, event) => {
         if (!acc[event.stage_name]) {
           acc[event.stage_name] = [];
@@ -29,6 +31,14 @@ export const ProgramList = ({ selectedDay }) => {
     }
   }, [events, selectedDay]);
 
+  const handleEventClick = (event) => {
+    setSelectedEvent(event); // open modal with event details
+  };
+
+  const closeModal = () => {
+    setSelectedEvent(null); // close modal
+  };
+
   return (
     <div className={styles.programList}>
       {Object.keys(groupedEvents).length > 0 ? (
@@ -39,7 +49,11 @@ export const ProgramList = ({ selectedDay }) => {
             </h3>
             <div className={styles.eventTable}>
               {events.map((event) => (
-                <div key={event.id} className={styles.eventRow}>
+                <div 
+                  key={event.id} 
+                  className={styles.eventRow} 
+                  onClick={() => handleEventClick(event)} // opens modal on click
+                >
                   <span className={styles.eventTime}>
                     {new Date(event.datetime).toLocaleTimeString("da-DK", {
                       hour: "2-digit",
@@ -55,6 +69,9 @@ export const ProgramList = ({ selectedDay }) => {
       ) : (
         <p className={styles.error}>Ingen events for denne dag.</p>
       )}
+
+      {/* modal only appears when event is selected */}
+      {selectedEvent && <EventModal event={selectedEvent} onClose={closeModal} />}
     </div>
   );
 };
