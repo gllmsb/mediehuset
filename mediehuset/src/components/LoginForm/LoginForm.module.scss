@@ -1,0 +1,81 @@
+@use "../../styles/variables" as *;
+
+.loginForm {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto 5rem;
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: $trebuchet;
+  }
+
+  p {
+    font-size: 16px;
+    color: $paragraph;
+    margin-bottom: 20px;
+  }
+
+  .inputGroup {
+    margin-bottom: 15px;
+    text-align: left;
+
+    .inputWrapper {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+
+      .icon {
+        background: $tilmeld;
+        color: white;
+        font-size: 18px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 40px;
+      }
+
+      input {
+        border: none;
+        outline: none;
+        flex: 1;
+        padding: 10px;
+        background: white;
+        color: $words;
+
+        &::placeholder {
+          color: #aaa;
+        }
+      }
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .loginButton {
+    background: $tilmeld;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: $dark-blue;
+    }
+  }
+}

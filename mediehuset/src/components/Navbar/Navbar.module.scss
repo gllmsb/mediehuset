@@ -7,7 +7,6 @@
   padding: 20px;
   background-color: $light;
 
-
   .logo img {
     height: 40px;
   }
@@ -17,7 +16,7 @@
     font-weight: bold;
     font-family: $brushScript;
 
-    p{
+    p {
       font-family: $brushScript;
       font-weight: 200;
       font-size: 20px;
@@ -44,7 +43,7 @@
 
         &:hover {
           color: $red;
-          letter-spacing: 2px; 
+          letter-spacing: 2px;
         }
       }
 
@@ -84,7 +83,7 @@
 
               &:hover {
                 color: $red;
-                background-color: $light; 
+                background-color: $light;
               }
             }
           }
@@ -101,5 +100,34 @@
     font-size: 18px;
     cursor: pointer;
   }
-}
 
+  .logOutButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: #ddd;
+    color: $words;
+    border: none;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 200;
+    font-family: $trebuchet;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    white-space: nowrap; 
+    min-width: 100px; 
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+  
+    &:hover {
+      background: $red;
+      color: $light;
+      letter-spacing: 1px;
+    }
+  
+    svg {
+      font-size: 18px; 
+    }
+  }
+}  

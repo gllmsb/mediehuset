@@ -19,7 +19,7 @@ export const DayFilter = ({ onSelectDay }) => {
           className={selectedDay === day ? styles.active : ''}//highlight selected button
           onClick={() => handleDayClick(day)}
         >
-          {day}//display day name
+          {day}
         </button>
       ))}
     </div>

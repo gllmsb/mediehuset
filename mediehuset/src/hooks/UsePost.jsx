@@ -25,15 +25,28 @@ export const usePost = () => {
       if (response.ok) {
         setData(result);
 
-        // If it's a login request, store the token
+        // if its a login request, store the token
         if (url.includes("token") && result.access_token) {
           localStorage.setItem("token", result.access_token);
+
+          // fetch user details after login
+          const userResponse = await fetch("https://api.mediehuset.net/mediesuset/", {
+            headers: {
+              Authorization: `Bearer ${result.access_token}`,
+            },
+          });
+
+          const userData = await userResponse.json();
+
+          if (userResponse.ok) {
+            localStorage.setItem("user", JSON.stringify(userData));
+          }
         }
       } else {
-        setError(result.message || "An error occurred");
+        setError(result.message || "En fejl opstod");
       }
     } catch (err) {
-      setError("Network error");
+      setError("Netværksfejl");
     } finally {
       setLoading(false);
     }

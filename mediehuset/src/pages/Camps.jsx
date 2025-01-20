@@ -1,5 +1,5 @@
 import React from 'react';
-import homeImage from '../assets/images/Background2.png';
+import homeImage from '../assets/images/Background.png';
 import styles from './Camps.module.scss';
 import { Header } from '../components/Header/Header';
 import { Title } from '../components/Title/Title';
