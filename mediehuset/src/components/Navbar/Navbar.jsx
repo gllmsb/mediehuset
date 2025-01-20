@@ -23,7 +23,7 @@ export const Navbar = () => {
         <p>6-7. juli 2025</p>
       </div>
 
-      {/* Navigation Links for Desktop */}
+      {/* Desktop Navigation Links */}
       <ul className={styles.links}>
         <li><Link to="/">Forside</Link></li>
 
@@ -42,8 +42,15 @@ export const Navbar = () => {
 
         {/* Show "Min Side" when logged in, otherwise show "Login" */}
         {user ? (
-          <li>
+          <li className={styles.dropdown}>
             <Link to="/minside">Min Side</Link>
+            <ul className={styles.dropdownMenu}>
+              <li>
+                <button className={styles.logOutButton} onClick={logout}>
+                  Log ud
+                </button>
+              </li>
+            </ul>
           </li>
         ) : (
           <li><Link to="/login">Login</Link></li>
@@ -69,7 +76,7 @@ export const Navbar = () => {
 
         {user ? (
           <>
-            <Link to="/min-side" onClick={() => setMenuOpen(false)}>Min Side</Link>
+            <Link to="/minside" onClick={() => setMenuOpen(false)}>Min Side</Link>
             <button className={styles.logOutButton} onClick={() => { logout(); setMenuOpen(false); }}>
               Log ud
             </button>
