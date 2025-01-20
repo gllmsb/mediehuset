@@ -1,0 +1,47 @@
+@use "../styles/variables" as *;
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: $trebuchet;
+}
+
+.infoSection {
+  background-color: $light;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  h2 {
+    font-size: 22px;
+    color: $words;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: $paragraph;
+  }
+}
+
+.mapSection {
+  text-align: center;
+  background-color: $light;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 22px;
+    color: $words;
+    margin-bottom: 10px;
+  }
+
+  .mapImage {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+}

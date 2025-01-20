@@ -42,7 +42,7 @@ export const Navbar = () => {
         {/* ff user is logged in, show "Min Side" with logout, otherwise show Login */}
         {user ? (
           <li className={styles.dropdown}>
-            <Link to="/min-side">Min Side</Link>
+            <Link to="/minside">Min Side</Link>
             <ul className={styles.dropdownMenu}>
               <li>
                 <button className={styles.logOutButton} onClick={logout}>

@@ -1,11 +1,14 @@
 import React, { createContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Import navigation hook
+import { useNavigate } from "react-router-dom"; 
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate(); // react router navigation
+  const [user, setUser] = useState(() => {
+    return JSON.parse(localStorage.getItem("user")) || null;
+  });
+
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -16,14 +19,18 @@ export const UserProvider = ({ children }) => {
 
   const login = (userData) => {
     setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData)); // store user in localStorage
+    localStorage.setItem("user", JSON.stringify(userData));
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("user"); // remove user from storage
-    localStorage.removeItem("access_token"); // remove token
-    navigate("/login"); // redirect to login page
+    localStorage.removeItem("user");
+    localStorage.removeItem("access_token");
+
+    // ensure navigation happens AFTER React updates state
+    setTimeout(() => {
+      navigate("/login"); 
+    }, 100);
   };
 
   return (

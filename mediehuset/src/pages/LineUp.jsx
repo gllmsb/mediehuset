@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import homeImage from '../assets/images/Background.png';
 import styles from './LineUp.module.scss';
 import { useGet } from '../hooks/UseGet';
 import { Title } from '../components/Title/Title';
 import { Header } from '../components/Header/Header';
+import { UserContext } from '../context/UserContext';
+import { useProgramActions } from '../hooks/UseProgramAction';
 
 export const LineUp = () => {
   const { data: stages } = useGet('https://api.mediehuset.net/mediesuset/stages');
   const { data: events } = useGet('https://api.mediehuset.net/mediesuset/events');
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [selectedStage, setSelectedStage] = useState('');
+
+  const { user } = useContext(UserContext); 
+  const { addToProgram } = useProgramActions();
 
   useEffect(() => {
     if (events) {
@@ -65,6 +70,14 @@ export const LineUp = () => {
                   minute: '2-digit',
                 })}
               </p>
+              {user && (
+                <button
+                  className={styles.addButton}
+                  onClick={() => addToProgram(event.id)}
+                >
+                  Tilføj til Mit Program
+                </button>
+              )}
             </div>
           </div>
         ))}

@@ -81,12 +81,17 @@
   
   
     .eventCard {
-      background-color: #f9f9f9;
-      height: 320px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: left;
-      color: $words;
-      overflow: hidden;
+      min-height: 300px;
+      justify-content: left;
+      align-items: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    
+      .addButton {
+        margin-top: auto; 
+      }
+    }    
   
       img {
         width: 100%;
@@ -113,6 +118,21 @@
         font-family: $trebuchet;
       }
     }
+
+    .events {
+      .eventCard {
+        height: 360px; 
+    
+        &:has(.addButton) { 
+          height: 360px; 
+        }
+    
+        &:not(:has(.addButton)) {
+          height: 330px; 
+        }
+      }
+    }
+    
   
     .rødscene .eventCard {
       background-color: $red;
@@ -133,6 +153,26 @@
       background-color: $purple;
       color: $light;
     }
-  }
+
+    .addButton {
+      background-color: $light; 
+      color: $words;
+      border: none;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 200;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      transition-delay: 0.1s;
+      
+      display: block; 
+      margin: 10px auto; 
+    
+      &:hover {
+        background-color: #bababa; 
+      }
+    }
         
   
