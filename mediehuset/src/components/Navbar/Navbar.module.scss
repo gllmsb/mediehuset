@@ -6,6 +6,7 @@
   align-items: center;
   padding: 20px;
   background-color: $light;
+  position: relative;
 
   .logo img {
     height: 40px;
@@ -130,4 +131,56 @@
       font-size: 18px; 
     }
   }
-}  
+
+  .menuIcon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  @media (max-width: 1024px) { 
+    .links {
+      display: none; 
+    }
+
+    .menuIcon {
+      display: block;
+    }
+
+    .mobileMenu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: $light;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      display: none; 
+
+      a {
+        text-decoration: none;
+        color: $words;
+        font-size: 16px;
+        padding: 10px;
+        transition: background 0.3s ease;
+        transition: color 0.3s ease, letter-spacing 0.3s ease;
+        font-family: $trebuchet;
+
+        &:hover {
+          color: $red;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    .mobileMenu.open {
+      display: flex;
+    }
+  }
+}
